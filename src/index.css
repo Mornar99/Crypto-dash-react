@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.news-feed{
+  background-color: bisque;
+  padding: 10px;
+  margin: 5px;
+  max-width: 300px;
+  overflow: auto;
+}
+
+.currency-converter{
+  background-color: lightgray;
+  padding: 10px;
+  padding-top: 0;
+  margin: 5px;
+  text-align: center;
+  max-height: 400px;
+}
+
+.exchange-rate-display{
+  background-color: gray;
+  padding: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+#convert-button{
+  margin: 5px;
+  border-radius: 40%;
+  border: none;
+  height: 25px;
+}
+
+#convert-button:hover{
+  background-color: coral;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+input, select{
+  border: none;
+}
+
+/*kad udem u mobile mode(kad je max-width: 400px), onda se ove promjene dogode*/
+/*ovo triba stavit na kraj css filea*/
+@media only screen and (max-width: 400px){
+  .container{
+    flex-direction: column;
+  }
+
+  .currency-converter{
+    margin: 10px;
+  }
+
+  .exchange-rate-display{
+    font-size: 1.1em;
+  }
+}
