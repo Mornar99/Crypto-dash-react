@@ -18,12 +18,8 @@ const CurrencyConverter = () => {
     const convert = () => {
         const options = {
             method: 'GET',
-            url: 'https://alpha-vantage.p.rapidapi.com/query',
-            params: {from_currency: chosenPrimary, function: 'CURRENCY_EXCHANGE_RATE', to_currency: chosenSecondary},
-            headers: {
-              'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,//obavezno stavit REACT_APP_ na pocetak naziva apiKey-a
-              'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'     //obavezno stavit .env u gitignore kako se apiKey ne bi uploada na github -> ovaj nacin je ok za osobne projekte ali inace se radi backend
-            }
+            url: 'http://localhost:8000/convert',
+            params: {from_currency: chosenPrimary, function: 'CURRENCY_EXCHANGE_RATE', to_currency: chosenSecondary}
           };
           
           axios.request(options).then((response) => {

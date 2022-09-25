@@ -28,11 +28,7 @@ const NewsFeed = () => {
     useEffect(() => {
         const options = {
             method: 'GET',
-            url: 'https://crypto-news15.p.rapidapi.com/news',
-            headers: {
-              'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-              'X-RapidAPI-Host': 'crypto-news15.p.rapidapi.com'
-            }
+            url: 'http://localhost:8000/news'
           };
           
           axios.request(options).then((response) => {
